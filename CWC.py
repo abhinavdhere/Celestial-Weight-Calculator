@@ -86,7 +86,7 @@ Disclaimer
 
 This software is provided "as is" and without any warranty whatsoever.
 All computations are based on data available in public domain.
-The developer does not take any guaranty for accuracy of results.
+The developer does not take any guarantee for accuracy of results.
 """
 		
 		newWin=Tkinter.Toplevel()
