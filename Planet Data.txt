@@ -1,0 +1,13 @@
+#Data obtained from http://nineplanets.org/data1.html. More data may be added in same format if required
+#Name Radius(m) Mass(kg)
+Sun 695000000 1.988e30
+Moon 1738000 7.3477e+22
+Mercury 2440000 3.30e23
+Venus 6052000 4.87e24
+Earth 6378000 5.97e24
+Mars 3397000 6.42e23
+Jupiter 71492000 1.90e27
+Saturn 60268000 5.68e26
+Uranus 25559000 8.68e25
+Neptune 24766000 1.02e26
+Pluto 1150000 1.27e22
