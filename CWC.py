@@ -1,5 +1,12 @@
 #!/usr/bin/env Python
+#------------------------------------------------------------------------------------------------------
 #Implementation of Celestial Weight Calculator in GUI
+#Date: 5 May 2015
+#
+#This source code has been provided solely for reference purposes.
+#(c) Abhinav Dhere. All rights reserved.
+#
+#------------------------------------------------------------------------------------------------------
 
 import Tkinter
 
