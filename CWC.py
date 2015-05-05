@@ -35,12 +35,15 @@ class CWC_app(Tkinter.Tk):
 		planetLabel=Tkinter.Label(text="Select Celestial body:  ")
 		planetLabel.pack(anchor="w",side="top",pady=10)
 
-		self.planets=self.getPlanetData()
-		planetList=self.planets.keys()
-		self.selection=Tkinter.StringVar()
-		self.selection.set(planetList[0])
-		options=apply(Tkinter.OptionMenu, (self,self.selection) + tuple(planetList))
-		options.pack(anchor="w")
+		try:
+			self.planets=self.getPlanetData()
+			planetList=self.planets.keys()
+			self.selection=Tkinter.StringVar()
+			self.selection.set(planetList[0])
+			options=apply(Tkinter.OptionMenu, (self,self.selection) + tuple(planetList))
+			options.pack(anchor="w")
+		except:
+			self.IOErr()
 
 		button=Tkinter.Button(self,text=u"Compute Weight",command=self.OnClick)
 		button.pack(side="top",pady=10)
@@ -106,6 +109,7 @@ The developer does not take any guarantee for accuracy of results.
 		'''
 		holds data for planets 
 		'''
+		# try:
 		dataFile=open("Planet Data.txt",'r')
 		planets={}
 		for line in dataFile:
@@ -116,6 +120,14 @@ The developer does not take any guarantee for accuracy of results.
 				data=line.split()
 				planets[data[0]]=(float(data[1]),float(data[2]))
 		return planets
+
+	def IOErr(self):
+		errWin=Tkinter.Toplevel()
+		errWin.title("Error")
+		error=Tkinter.Label(errWin,text="Planet Data.txt not found")
+		errBut=Tkinter.Button(errWin,text=u"Ok", command=self.quit)
+		error.pack()
+		errBut.pack()
 
 	def OnClick(self):
 		try:
@@ -174,4 +186,3 @@ if __name__=="__main__":
 	app=CWC_app(None)
 	app.title("Celestial Weight Calculator v2.0")
 	app.mainloop()
-
